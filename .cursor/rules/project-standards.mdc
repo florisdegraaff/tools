@@ -1,0 +1,32 @@
+---
+description: Project standards for stack, security, and environment handling
+alwaysApply: true
+---
+
+# Project Context
+
+- Build with Next.js.
+- Use Material UI for UI components.
+- Use SCSS Modules for component/page styling.
+- Use Prisma for database access and schema management.
+- Sanity is optional and should only be added when content modeling requires a CMS.
+
+# Security and Secrets
+
+- Treat this repository as public; never commit secrets.
+- Never hardcode API keys, tokens, credentials, or private URLs in code.
+- Put all sensitive values in environment variables and document them in `.env.example`.
+- Do not write real values into `.env` files; only the user should set local secret values.
+- If adding a new integration, add/update corresponding env variable placeholders in `.env.example`.
+
+# Implementation Preferences
+
+- Prefer server-side secret usage; expose values to client only when they are intentionally public (`NEXT_PUBLIC_*`).
+- Keep code modular by feature (tool modules/pages/components/services).
+- For Next.js + MUI, prefer theme-driven styles and use SCSS Modules where custom styling is needed.
+- For Prisma, keep schema changes tracked with migrations and update generated client usage accordingly.
+
+# Delivery Requirements
+
+- When implementing features, include a short note of any new required environment variables.
+- If Sanity is introduced, include setup steps and required env vars in docs and `.env.example`.
