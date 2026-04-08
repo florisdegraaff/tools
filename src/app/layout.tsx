@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import MuiThemeProvider from "@/components/mui-theme-provider";
+import Header from "@/components/organisms/header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,7 +29,10 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body suppressHydrationWarning>
         <AppRouterCacheProvider>
-          <MuiThemeProvider>{children}</MuiThemeProvider>
+          <MuiThemeProvider>
+            <Header />
+            {children}
+          </MuiThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
