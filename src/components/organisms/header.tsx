@@ -8,6 +8,7 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import AppBar from "@mui/material/AppBar";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Link from "@/components/atoms/link";
 import { useRouter } from "next/navigation";
@@ -74,42 +75,44 @@ export default function Header() {
 
   return (
     <AppBar position="static">
-      <Toolbar>
-        <IconButton color="inherit" aria-label="home" component={Link} href="/">
-          <HomeOutlinedIcon />
-        </IconButton>
-        <Box sx={{ flexGrow: 1 }} />
-        <IconButton
-          color="inherit"
-          aria-label="profile"
-          component={Link}
-          href={isLoggedIn ? "/account" : "/login"}
-        >
-          {isLoggedIn ? (
-            <Avatar
-              sx={{
-                width: 32,
-                height: 32,
-                fontSize: 14,
-                bgcolor: avatarBackgroundColor,
-                color: "#ffffff",
-              }}
-            >
-              {initials || "JD"}
-            </Avatar>
-          ) : (
-            <LoginOutlinedIcon />
-          )}
-        </IconButton>
-        {isLoggedIn ? (
-          <IconButton color="inherit" aria-label="logout" onClick={handleLogout}>
-            <LogoutOutlinedIcon />
+      <Container maxWidth="lg">
+        <Toolbar disableGutters>
+          <IconButton color="inherit" aria-label="home" component={Link} href="/">
+            <HomeOutlinedIcon />
           </IconButton>
-        ) : null}
-        <IconButton color="inherit" aria-label="module selector">
-          <AppsOutlinedIcon />
-        </IconButton>
-      </Toolbar>
+          <Box sx={{ flexGrow: 1 }} />
+          <IconButton
+            color="inherit"
+            aria-label="profile"
+            component={Link}
+            href={isLoggedIn ? "/account" : "/login"}
+          >
+            {isLoggedIn ? (
+              <Avatar
+                sx={{
+                  width: 32,
+                  height: 32,
+                  fontSize: 14,
+                  bgcolor: avatarBackgroundColor,
+                  color: "#ffffff",
+                }}
+              >
+                {initials || "JD"}
+              </Avatar>
+            ) : (
+              <LoginOutlinedIcon />
+            )}
+          </IconButton>
+          {isLoggedIn ? (
+            <IconButton color="inherit" aria-label="logout" onClick={handleLogout}>
+              <LogoutOutlinedIcon />
+            </IconButton>
+          ) : null}
+          <IconButton color="inherit" aria-label="module selector">
+            <AppsOutlinedIcon />
+          </IconButton>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 }
