@@ -1,0 +1,23 @@
+---
+description: Frontend architecture boundaries for apps/web and modules
+alwaysApply: true
+---
+
+# Frontend Architecture
+
+- `apps/web` is the composition layer for routes, layouts, and page assembly.
+- Business logic should be implemented in `modules/<module-name>/`, not directly in page files.
+- Keep page files thin: they should call module APIs/hooks/components and render.
+- Module code should be organized by feature ownership, not by route ownership.
+- Shared app-shell concerns (providers, global layout, metadata, navigation) can stay in `apps/web`.
+
+# Import Direction
+
+- Allowed: `apps/web` imports from `modules/*`.
+- Avoid importing route-specific code back into modules.
+- Keep module APIs explicit through module-level exports to reduce deep relative imports.
+
+# Module Boundaries
+
+- Each module owns its own internal logic and data access flows.
+- Prefer extending an existing module over scattering related logic in multiple routes.

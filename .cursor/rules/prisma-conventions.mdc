@@ -1,0 +1,28 @@
+---
+description: Prisma usage, migrations, and data access conventions
+alwaysApply: true
+---
+
+# Prisma Conventions
+
+- Use Prisma as the primary database access layer.
+- Keep data access logic inside `modules/<module-name>/` to match module ownership.
+- Avoid scattering direct Prisma queries across unrelated app files.
+
+# Client and Query Patterns
+
+- Use a shared Prisma client entry point instead of creating many client instances.
+- Keep queries close to module use cases and name functions after domain intent.
+- Prefer explicit selects/includes over fetching broad records by default.
+
+# Transactions and Writes
+
+- Use transactions for multi-step writes that must stay consistent.
+- Validate input before database writes.
+- Handle known Prisma errors and return module-level errors/messages.
+
+# Migrations
+
+- Use descriptive migration names focused on the schema change intent.
+- Keep schema and migration changes in sync in the same change set.
+- Do not edit historical migrations after they are applied in shared environments.
