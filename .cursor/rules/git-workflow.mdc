@@ -1,0 +1,28 @@
+---
+description: Git hygiene and local verification workflow
+alwaysApply: true
+---
+
+# Git Workflow
+
+- Keep commits focused on one logical change.
+- Write clear commit messages that describe intent, not just file changes.
+- Do not include unrelated refactors in the same commit as feature work.
+
+# Local Verification
+
+- Run lint before committing.
+- Run relevant tests for the touched modules before creating a PR.
+- If a change affects shared behavior, run broader checks at repo root.
+
+# Pre-commit Behavior
+
+- Respect Husky and lint-staged hooks.
+- Ensure staged files are clean so pre-commit checks pass without retries.
+- Avoid bypassing hooks except for explicit emergency scenarios.
+
+# Pull Request Quality
+
+- Keep PR scope reviewable and coherent.
+- Include short testing notes covering what was verified.
+- Resolve feedback by updating code and tests together where appropriate.
