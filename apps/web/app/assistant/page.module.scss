@@ -1,0 +1,259 @@
+.page {
+  height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px 12px;
+  background: #111418;
+  overflow: hidden;
+}
+
+.topMenu {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #111418;
+}
+
+.chatTitle {
+  color: #d9dfeb;
+}
+
+.chatTitleInput {
+  color: #d9dfeb;
+  font-size: 1rem;
+  max-width: 420px;
+  border-bottom: 1px solid #3a414f;
+}
+
+.renameButton {
+  color: #9ea8ba;
+}
+
+.renameButton:hover {
+  background: #242932;
+}
+
+.messagesArea {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  overflow-y: auto;
+  padding-bottom: 16px;
+  padding-right: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(194, 201, 212, 0.35) transparent;
+}
+
+.messagesArea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messagesArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messagesArea::-webkit-scrollbar-thumb {
+  background: rgba(194, 201, 212, 0.35);
+  border-radius: 999px;
+}
+
+.messagesArea::-webkit-scrollbar-thumb:hover {
+  background: rgba(194, 201, 212, 0.5);
+}
+
+.userMessageBubble {
+  align-self: flex-end;
+  max-width: min(72ch, 85%);
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: #2b3139;
+  color: #f0f4fa;
+  border: 1px solid #404754;
+  white-space: pre-wrap;
+}
+
+.botMessageBubble {
+  align-self: flex-start;
+  max-width: min(72ch, 85%);
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: #20252c;
+  color: #f0f4fa;
+  border: 1px solid #383f4c;
+  white-space: pre-wrap;
+}
+
+.systemMessageBubble {
+  align-self: center;
+  max-width: min(72ch, 90%);
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #2a2020;
+  color: #ffcdcd;
+  border: 1px solid #5a3434;
+  white-space: pre-wrap;
+}
+
+.typingIndicator {
+  opacity: 0.75;
+}
+
+.markdown {
+  line-height: 1;
+  word-break: break-word;
+}
+
+.markdown p {
+  margin: 0;
+}
+
+.markdown p + p {
+  margin-top: 0.7em;
+}
+
+.markdown ul,
+.markdown ol {
+  margin: 0.5em 0 0.2em 1.2em;
+  padding: 0;
+}
+
+.markdown li + li {
+  margin-top: 0.25em;
+}
+
+.markdown code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.9em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.markdown pre {
+  margin: 0.7em 0 0;
+  padding: 0.75em;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  overflow-x: auto;
+}
+
+.markdown pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown a {
+  color: #8ec6ff;
+}
+
+.composerArea {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  position: sticky;
+  bottom: 0;
+  padding-top: 8px;
+  background: linear-gradient(to bottom, rgba(17, 20, 24, 0), #111418 20px);
+  z-index: 1;
+}
+
+.composer {
+  min-height: 56px;
+  border-radius: 28px;
+  border: 1px solid #353a42;
+  background: #22262b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px 6px 10px;
+}
+
+.leadingButton {
+  color: #e8edf5;
+}
+
+.leadingButton :global(svg) {
+  font-size: 24px;
+}
+
+.inputField {
+  flex: 1;
+  min-width: 0;
+  color: #f0f4fa;
+  font-size: 1.25rem;
+  padding: 8px 0;
+}
+
+.inputField :global(textarea) {
+  line-height: 1.35;
+  resize: none;
+}
+
+.inputField :global(textarea::placeholder) {
+  color: #b9c0cc;
+  opacity: 1;
+}
+
+.trailingActions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.trailingButton {
+  color: #f5f7fb;
+}
+
+.trailingPrimary {
+  width: 42px;
+  height: 42px;
+  color: #0e1115;
+  background: #ffffff;
+}
+
+.trailingPrimary:hover {
+  background: #f0f3f8;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.modelSelect {
+  color: #c2c9d4;
+  background: transparent;
+}
+
+.modelSelect :global(.MuiOutlinedInput-notchedOutline) {
+  border: 0;
+}
+
+.modelSelect:hover :global(.MuiOutlinedInput-notchedOutline) {
+  border: 0;
+}
+
+.modelSelect:global(.Mui-focused) :global(.MuiOutlinedInput-notchedOutline) {
+  border: 0;
+}
+
+.modelSelect :global(.MuiSvgIcon-root) {
+  color: #c2c9d4;
+}
+
+.modelSelect :global(.MuiSelect-select) {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}

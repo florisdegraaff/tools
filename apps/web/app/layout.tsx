@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
+import { AppBar, Box, IconButton, Toolbar } from "@mui/material";
 import "./globals.css";
+import AuthGate from "./auth-gate";
+import Link from "./link";
 import MuiThemeProvider from "./theme-provider";
 
 const geistSans = localFont({
@@ -24,8 +28,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <MuiThemeProvider>{children}</MuiThemeProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+        <MuiThemeProvider>
+          <AppBar position="static" elevation={0}>
+            <Toolbar sx={{ justifyContent: "space-between" }}>
+              <IconButton
+                component={Link}
+                href="/"
+                edge="start"
+                color="inherit"
+                aria-label="Go to homepage"
+                sx={{ p: 1 }}
+              >
+                <AppsRoundedIcon />
+              </IconButton>
+              <Box />
+            </Toolbar>
+          </AppBar>
+          <AuthGate>
+            <Box component="main">{children}</Box>
+          </AuthGate>
+        </MuiThemeProvider>
       </body>
     </html>
   );
