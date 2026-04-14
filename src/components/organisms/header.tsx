@@ -2,7 +2,6 @@
 
 import { useSyncExternalStore } from "react";
 import Avatar from "@mui/material/Avatar";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import AppBar from "@mui/material/AppBar";
@@ -77,8 +76,8 @@ export default function Header() {
     <AppBar position="static">
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <IconButton color="inherit" aria-label="home" component={Link} href="/">
-            <HomeOutlinedIcon />
+          <IconButton color="inherit" aria-label="module selector" component={Link} href="/">
+            <AppsOutlinedIcon />
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <IconButton
@@ -108,9 +107,6 @@ export default function Header() {
               <LogoutOutlinedIcon />
             </IconButton>
           ) : null}
-          <IconButton color="inherit" aria-label="module selector">
-            <AppsOutlinedIcon />
-          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
