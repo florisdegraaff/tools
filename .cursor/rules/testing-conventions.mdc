@@ -1,27 +1,4 @@
 ---
-description: Vitest testing expectations for module-first development
-alwaysApply: true
+description: ""
+alwaysApply: false
 ---
-
-# Testing Conventions
-
-- Use Vitest for test execution.
-- Name tests with `.test.ts` / `.test.tsx` (or `.spec.ts` / `.spec.tsx`).
-- Keep tests near the code they validate when practical.
-
-# Test Priorities
-
-- Prioritize tests for module logic in `modules/` first.
-- Test core business rules and edge cases before UI polish cases.
-- Keep page-level tests focused on composition behavior, not module internals.
-
-# Quality Expectations
-
-- New module logic should include tests for happy-path and at least one failure/edge path.
-- Tests should be deterministic and avoid hidden global state.
-- Mock only external boundaries (network, time, DB) where necessary.
-
-# Commands
-
-- Use workspace and root test scripts already defined in this repo.
-- Ensure lint and tests pass locally before opening a PR.

@@ -1,39 +1,7 @@
-# Decisions Log
+# Decisions
 
-Use this folder for lightweight architecture decision records (ADRs).
+Short records of product and technical choices. Each file is one decision (context, decision, consequences). New decisions get a new markdown file; keep them brief.
 
-## Why
-
-Decision notes keep context when conventions, module boundaries, or implementation strategy changes over time.
-
-## File Naming
-
-Use:
-
-- `YYYY-MM-DD-topic.md`
-
-Examples:
-
-- `2026-04-14-module-boundaries.md`
-- `2026-04-14-prisma-client-location.md`
-
-## Recommended Template
-
-```md
-# <Decision Title>
-
-## Date
-YYYY-MM-DD
-
-## Status
-Proposed | Accepted | Superseded
-
-## Context
-What problem or pressure led to this decision?
-
-## Decision
-What we decided.
-
-## Consequences
-Trade-offs, follow-ups, and migration impact.
-```
+| Decision | Summary |
+|----------|---------|
+| [platform-delivery](./platform-delivery.md) | Next.js responsive web (+ PWA when needed); Capacitor later if we want store apps. |

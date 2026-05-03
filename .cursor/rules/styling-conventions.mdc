@@ -1,23 +1,4 @@
 ---
-description: MUI-first styling conventions and SCSS override patterns
-alwaysApply: true
+description: ""
+alwaysApply: false
 ---
-
-# Styling Conventions
-
-- Use Material UI components as the default UI building blocks.
-- Keep design tokens and global visual defaults in the MUI theme.
-- Use SCSS classes for visual overrides and component-specific styling adjustments.
-
-# Choosing Theme vs sx vs SCSS
-
-- Use **theme** for reusable tokens and component defaults.
-- Use **`sx`** for small, local, one-off layout tweaks that are tightly scoped.
-- Use **SCSS classes** for larger style overrides, stateful styles, and styles that are easier to maintain in stylesheet form.
-
-# SCSS Rules
-
-- Prefer colocated `*.module.scss` files near the component/page using them.
-- Keep selectors local and predictable; avoid broad global selectors.
-- Do not use `!important` unless there is no reasonable alternative.
-- If overriding MUI internals, scope overrides to a local wrapper class instead of global overrides.
